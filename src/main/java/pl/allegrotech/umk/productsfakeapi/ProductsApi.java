@@ -15,8 +15,8 @@ public class ProductsApi {
 
     @GetMapping
     @CrossOrigin
-    List<ProductDto> products() {
-        return Collections.unmodifiableList(
+    ProductsDto products() {
+        return new ProductsDto(Collections.unmodifiableList(
                 Arrays.asList(
                         product("product-id-1",
                                 "Krzesło",
@@ -54,7 +54,7 @@ public class ProductsApi {
                                 "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
                         )
                 )
-        );
+        ));
     }
 
     private ProductDto product(String id,
